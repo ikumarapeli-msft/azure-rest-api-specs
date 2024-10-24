@@ -164,6 +164,13 @@ model AssetEndpointProfileStatusError {
   message?: string;
 }
 
+// The updateable properties of the Asset Endpoint Profile.
+// This is a workaround to fix the patch payload that otherwise will expose the 'location' field (not present in patch),
+// since otherwise it extends the ARM TrackedResource type.
+alias AssetEndpointProfilePropertiesUpdate = {
+  ...OptionalProperties<UpdateableProperties<AssetEndpointProfileProperties>>;
+};
+
 @armResourceOperations
 interface AssetEndpointProfiles {
   get is ArmResourceRead<AssetEndpointProfile>;
@@ -175,7 +182,7 @@ interface AssetEndpointProfiles {
     AssetEndpointProfile,
     Azure.ResourceManager.Foundations.ResourceUpdateModel<
       AssetEndpointProfile,
-      AssetEndpointProfileProperties
+      AssetEndpointProfilePropertiesUpdate
     >
   >;
   delete is ArmResourceDeleteWithoutOkAsync<AssetEndpointProfile>;

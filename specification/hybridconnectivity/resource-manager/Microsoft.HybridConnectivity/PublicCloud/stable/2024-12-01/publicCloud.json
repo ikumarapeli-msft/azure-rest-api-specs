@@ -291,7 +291,7 @@
     },
     "/{resourceUri}/providers/Microsoft.HybridConnectivity/solutionConfigurations/{solutionConfiguration}/inventory": {
       "get": {
-        "operationId": "Inventory_ListBySolutionConfiguration",
+        "operationId": "Inventory_ListByWidget",
         "tags": [
           "Inventory"
         ],
@@ -327,8 +327,8 @@
           }
         },
         "x-ms-examples": {
-          "Inventory_ListBySolutionConfiguration": {
-            "$ref": "./examples/Inventory_ListBySolutionConfiguration.json"
+          "Inventory_ListByWidget": {
+            "$ref": "./examples/Inventory_ListByWidget.json"
           }
         },
         "x-ms-pageable": {
@@ -411,12 +411,6 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Azure operation completed successfully.",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/OperationStatusResult"
-            }
-          },
           "202": {
             "description": "Resource operation accepted.",
             "headers": {
@@ -655,7 +649,7 @@
           }
         },
         "x-ms-examples": {
-          "PublicCloudConnectors_Get": {
+          "publicCloudConnectors_Get": {
             "$ref": "./examples/PublicCloudConnectors_Get.json"
           }
         }
@@ -865,7 +859,7 @@
           "200": {
             "description": "Azure operation completed successfully.",
             "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/OperationStatusResult"
+              "$ref": "#/definitions/TestPermissionResult"
             }
           },
           "202": {
@@ -998,7 +992,6 @@
           "type": "string",
           "description": "Account id for the AWS account.",
           "x-ms-mutability": [
-            "read",
             "create"
           ]
         },
@@ -1014,7 +1007,6 @@
           "description": "Boolean value that indicates whether the account is organizational or not. True represents organization account, whereas false represents a single account.",
           "default": false,
           "x-ms-mutability": [
-            "read",
             "create"
           ]
         }
@@ -1257,7 +1249,6 @@
           "$ref": "#/definitions/HostType",
           "description": "Host cloud the public cloud connector.",
           "x-ms-mutability": [
-            "read",
             "create"
           ]
         },

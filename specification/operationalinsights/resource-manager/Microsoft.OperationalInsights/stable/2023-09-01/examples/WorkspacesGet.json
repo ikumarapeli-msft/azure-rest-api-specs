@@ -12,7 +12,7 @@
           "customerId": "5b02755b-5bf4-430c-9487-45502a2a7e62",
           "provisioningState": "Succeeded",
           "sku": {
-            "name": "PerGB2018"
+            "name": "Free"
           },
           "retentionInDays": 30,
           "publicNetworkAccessForQuery": "Enabled",

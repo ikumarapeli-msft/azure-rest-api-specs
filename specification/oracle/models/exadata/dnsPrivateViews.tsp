@@ -20,25 +20,32 @@ model DnsPrivateView is ProxyResource<DnsPrivateViewProperties> {
 @doc("Views resource model")
 model DnsPrivateViewProperties {
   @doc("The OCID of the view")
-  ocid: Ocid;
+  @visibility("read")
+  ocid?: Ocid;
 
   @doc("The display name of the view resource")
-  displayName: string;
+  @visibility("read")
+  displayName?: string;
 
   @doc("A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.")
-  isProtected: boolean;
+  @visibility("read")
+  isProtected?: boolean;
 
   @doc("Views lifecycleState")
-  lifecycleState: DnsPrivateViewsLifecycleState;
+  @visibility("read")
+  lifecycleState?: DnsPrivateViewsLifecycleState;
 
   @doc("The canonical absolute URL of the resource.")
-  self: string;
+  @visibility("read")
+  self?: string;
 
   @doc("views timeCreated")
-  timeCreated: utcDateTime;
+  @visibility("read")
+  timeCreated?: utcDateTime;
 
-  @doc("views timeUpdated")
-  timeUpdated: utcDateTime;
+  @doc("views timeCreated")
+  @visibility("read")
+  timeUpdated?: utcDateTime;
 
   @doc("Azure resource provisioning state.")
   @visibility("read")

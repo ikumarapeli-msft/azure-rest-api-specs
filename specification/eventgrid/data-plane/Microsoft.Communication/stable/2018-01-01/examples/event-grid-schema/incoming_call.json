@@ -30,13 +30,6 @@
       }
     },
     "incomingCallContext": "{incoming-call-contextValue}",
-    "onBehalfOfCallee": {
-      "kind": "communicationUser",
-      "rawId": "{caller-id}",
-      "communicationUser": {
-        "id": "{caller-id}"
-      }
-    },
     "correlationId": "correlationId"
   },
   "eventType": "Microsoft.Communication.IncomingCall",

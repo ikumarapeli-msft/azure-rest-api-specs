@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_Import",
-  "title": "SuccessfulImportProject",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

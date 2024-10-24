@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_ListDeploymentResources",
-  "title": "SuccessfulListDeploymentResources",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

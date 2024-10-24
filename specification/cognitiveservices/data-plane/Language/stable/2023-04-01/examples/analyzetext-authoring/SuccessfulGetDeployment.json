@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_GetDeployment",
-  "title": "Successful Get Deployment",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

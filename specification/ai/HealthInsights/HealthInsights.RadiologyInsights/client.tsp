@@ -90,13 +90,13 @@ interface RadiologyInsightsClient {
 
 @@clientName(AzureHealthInsights.DocumentAuthor,
   "ClinicalDocumentAuthor",
-  "csharp, java"
+  "csharp"
 );
 @@clientName(AzureHealthInsights.DocumentType,
   "ClinicalDocumentContentType",
-  "csharp, java"
+  "csharp"
 );
 @@clientName(AzureHealthInsights.DocumentContent,
   "ClinicalDocumentContent",
-  "csharp, java"
+  "csharp"
 );

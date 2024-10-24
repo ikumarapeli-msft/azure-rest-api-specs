@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_GetExportedModelJobStatus",
-  "title": "SuccessfulGetExportedModelStatus",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

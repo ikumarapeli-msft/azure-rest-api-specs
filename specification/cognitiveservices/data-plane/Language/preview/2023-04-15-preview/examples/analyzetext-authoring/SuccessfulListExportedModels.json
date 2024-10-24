@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_ListExportedModels",
-  "title": "SuccessfulListExportedModels",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

@@ -6,5 +6,4 @@ suppressions:
   azure-sdk-for-python:
     - package: azure-mgmt-hybridconnectivity
       breaking-changes:
-        - Method `HybridConnectivityMgmtClient.__init__` inserted a `positional_or_keyword` parameter `subscription_id`
         - "'HybridConnectivityMgmtClient.__init__' method inserted a 'positional_or_keyword' parameter 'subscription_id'"

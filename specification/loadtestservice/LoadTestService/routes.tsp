@@ -5,7 +5,6 @@ import "@typespec/openapi";
 import "@azure-tools/typespec-client-generator-core";
 import "./models.tsp";
 import "./models.testprofile.tsp";
-import "./models.trigger.tsp";
 
 using Azure.Core;
 using Azure.Core.Traits;
@@ -17,7 +16,6 @@ using Azure.ClientGenerator.Core;
 
 namespace Microsoft.LoadTestService;
 
-#suppress "deprecated" "LEGACY - DO NOT COPY - FIX"
 @@encodedName(Azure.Core.Foundations.ResourceBody.resource,
   "application/json",
   "body"
@@ -234,7 +232,7 @@ interface LoadTestRun {
   @doc("Get test run file by file name.")
   getTestRunFile is StandardResourceOperations.ResourceRead<TestRunFileInfo>;
 
-  #suppress "@azure-tools/typespec-azure-core/no-openapi"
+  #suppress "@azure-tools/typespec-azure-core/no-operation-id"
   @summary("Stop test run by test run Id.")
   @doc("Stop test run by test run Id.")
   @operationId("LoadTestRun_StopTestRun")
@@ -491,7 +489,7 @@ interface TestProfileRunAdministration {
   @added(APIVersions.v2024_05_01_preview)
   deleteTestProfileRun is StandardResourceOperations.ResourceDelete<TestProfileRun>;
 
-  #suppress "@azure-tools/typespec-azure-core/no-openapi"
+  #suppress "@azure-tools/typespec-azure-core/no-operation-id"
   @summary("Stop test profile run.")
   @doc("Stop test profile run for the given test profile run Id.")
   @operationId("TestProfileRunAdministration_StopTestProfileRun")
@@ -509,20 +507,5 @@ interface TestProfileRunAdministration {
   listTestProfileRuns is StandardResourceOperations.ResourceList<
     TestProfileRun,
     ListQueryParametersTrait<ListTestProfileRunQueryParams>
-  >;
-}
-
-@tag("Trigger")
-@added(APIVersions.v2024_07_01_preview)
-interface TriggerAdministration {
-  getTrigger is StandardResourceOperations.ResourceRead<Trigger>;
-
-  createOrUpdateTrigger is StandardResourceOperations.ResourceCreateOrUpdate<Trigger>;
-
-  deleteTrigger is StandardResourceOperations.ResourceDelete<Trigger>;
-
-  listTrigger is StandardResourceOperations.ResourceList<
-    Trigger,
-    ListQueryParametersTrait<ListTriggerQueryParams>
   >;
 }

@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_ListTrainingJobs",
-  "title": "Successful List Training Jobs",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

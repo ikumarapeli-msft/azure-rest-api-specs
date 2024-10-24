@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_SwapDeployments",
-  "title": "Successful Swap Deployments",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

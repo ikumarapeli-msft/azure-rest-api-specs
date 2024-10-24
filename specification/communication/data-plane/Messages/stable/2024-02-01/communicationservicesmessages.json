@@ -359,7 +359,7 @@
     },
     "CommunicationMessageKind": {
       "type": "string",
-      "description": "The type of message.",
+      "description": "The type of message. Supports text, image, template.",
       "enum": [
         "text",
         "image",
@@ -407,7 +407,7 @@
     },
     "MediaNotificationContent": {
       "type": "object",
-      "description": "A request to send an image notification.",
+      "description": "A request to send a media notification.",
       "properties": {
         "content": {
           "type": "string",

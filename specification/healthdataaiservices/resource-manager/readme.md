@@ -27,16 +27,7 @@ These are the global settings for the healthdataaiservices.
 ```yaml
 openapi-type: arm
 openapi-subtype: rpaas
-tag: package-2024-09-20
-```
-
-### Tag: package-2024-09-20
-
-These settings apply only when `--tag=package-2024-09-20` is specified on the command line.
-
-```yaml $(tag) == 'package-2024-09-20'
-input-file:
-  - Microsoft.HealthDataAIServices/stable/2024-09-20/openapi.json
+tag: package-2024-02-28-preview
 ```
 
 ### Tag: package-2024-02-28-preview

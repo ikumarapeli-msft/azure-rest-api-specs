@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_CancelTrainingJob",
-  "title": "Successful Cancel Training Job",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

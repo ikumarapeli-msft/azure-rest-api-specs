@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_ListProjects",
-  "title": "Successful List Projects",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

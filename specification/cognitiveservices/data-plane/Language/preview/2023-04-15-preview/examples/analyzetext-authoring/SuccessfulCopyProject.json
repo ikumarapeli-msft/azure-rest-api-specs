@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_CopyProject",
-  "title": "SuccessfulCopyProject",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

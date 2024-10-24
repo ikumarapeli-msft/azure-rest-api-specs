@@ -14,9 +14,7 @@
               "awsCloudProfile": {
                 "excludedAccounts": [
                   "rwgqpukglvbqmogqcliqolucp"
-                ],
-                "accountId": "troiiavknxmcpczvxwjhrdue",
-                "isOrganizationalAccount": true
+                ]
               },
               "hostType": "AWS",
               "provisioningState": "Succeeded",

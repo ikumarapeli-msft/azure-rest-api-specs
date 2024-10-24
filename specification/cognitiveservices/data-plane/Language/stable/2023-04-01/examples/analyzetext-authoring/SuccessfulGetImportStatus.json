@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_GetImportStatus",
-  "title": "Successful Get Import Status",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

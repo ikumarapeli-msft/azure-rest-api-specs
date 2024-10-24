@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_DeleteDeploymentFromResources",
-  "title": "SuccessfulDeleteDeploymentFromResources",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

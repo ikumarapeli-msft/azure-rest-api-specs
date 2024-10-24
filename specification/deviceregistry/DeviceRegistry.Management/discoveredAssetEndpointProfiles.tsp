@@ -17,7 +17,6 @@ namespace Microsoft.DeviceRegistry;
 
 @doc("Discovered Asset Endpoint Profile definition.")
 @added(Versions.v2024_09_01_preview)
-@removed(Versions.v2024_11_01)
 model DiscoveredAssetEndpointProfile
   is TrackedResource<DiscoveredAssetEndpointProfileProperties> {
   @doc("Discovered Asset Endpoint Profile name parameter.")
@@ -38,7 +37,6 @@ model DiscoveredAssetEndpointProfile
 
 @doc("Defines the Discovered Asset Endpoint Profile properties.")
 @added(Versions.v2024_09_01_preview)
-@removed(Versions.v2024_11_01)
 model DiscoveredAssetEndpointProfileProperties {
   @doc("The local valid URI specifying the network address/DNS name of a southbound device. The scheme part of the targetAddress URI specifies the type of the device. The additionalConfiguration field holds further connector type specific configuration.")
   targetAddress: url;
@@ -64,9 +62,15 @@ model DiscoveredAssetEndpointProfileProperties {
   provisioningState?: ProvisioningState;
 }
 
+// The updateable properties of the Discovered Asset Endpoint Profile.
+// This is a workaround to fix the patch payload that otherwise will expose the 'location' field (not present in patch),
+// since otherwise it extends the ARM TrackedResource type.
+alias DiscoveredAssetEndpointProfilePropertiesUpdate = {
+  ...OptionalProperties<UpdateableProperties<DiscoveredAssetEndpointProfileProperties>>;
+};
+
 @armResourceOperations
 @added(Versions.v2024_09_01_preview)
-@removed(Versions.v2024_11_01)
 interface DiscoveredAssetEndpointProfiles {
   get is ArmResourceRead<DiscoveredAssetEndpointProfile>;
   createOrReplace is ArmResourceCreateOrReplaceAsync<DiscoveredAssetEndpointProfile>;
@@ -77,7 +81,7 @@ interface DiscoveredAssetEndpointProfiles {
     DiscoveredAssetEndpointProfile,
     Azure.ResourceManager.Foundations.ResourceUpdateModel<
       DiscoveredAssetEndpointProfile,
-      DiscoveredAssetEndpointProfileProperties
+      DiscoveredAssetEndpointProfilePropertiesUpdate
     >
   >;
   delete is ArmResourceDeleteWithoutOkAsync<DiscoveredAssetEndpointProfile>;

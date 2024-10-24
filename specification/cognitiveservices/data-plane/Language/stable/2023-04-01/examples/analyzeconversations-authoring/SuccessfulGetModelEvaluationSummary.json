@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_GetModelEvaluationSummary",
-  "title": "Successful Get Model Evaluation Summary",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

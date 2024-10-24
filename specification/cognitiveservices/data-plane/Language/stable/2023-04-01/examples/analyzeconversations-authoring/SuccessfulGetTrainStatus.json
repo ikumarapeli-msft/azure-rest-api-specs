@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_GetTrainingStatus",
-  "title": "Successful Get Train Status",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

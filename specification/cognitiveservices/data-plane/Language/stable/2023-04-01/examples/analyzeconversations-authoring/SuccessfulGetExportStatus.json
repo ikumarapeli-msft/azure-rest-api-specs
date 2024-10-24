@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_GetExportStatus",
-  "title": "Successful Get Export Status",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

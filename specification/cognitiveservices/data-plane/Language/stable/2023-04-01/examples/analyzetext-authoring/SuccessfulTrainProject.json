@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_Train",
-  "title": "SuccessfulTrainProject",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

@@ -117,7 +117,7 @@ model PublicCloudConnectorProperties {
   awsCloudProfile: AwsCloudProfile;
 
   @doc("Host cloud the public cloud connector.")
-  @visibility("create", "read")
+  @visibility("create")
   hostType: HostType;
 
   @doc("The resource provisioning state.")
@@ -140,14 +140,14 @@ union HostType {
 @doc("cloud profile for AWS.")
 model AwsCloudProfile {
   @doc("Account id for the AWS account.")
-  @visibility("create", "read")
+  @visibility("create")
   accountId: string;
 
   @doc("List of AWS accounts which need to be excluded.")
   excludedAccounts?: string[];
 
   @doc("Boolean value that indicates whether the account is organizational or not. True represents organization account, whereas false represents a single account.")
-  @visibility("create", "read")
+  @visibility("create")
   isOrganizationalAccount?: boolean = false;
 }
 
@@ -301,7 +301,6 @@ union CloudNativeType {
 
 //------------------- Shared -------------------
 
-#suppress "@azure-tools/typespec-azure-resource-manager/no-empty-model" "Existing use case"
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "will move to a more structured model when stable/GA"
 @doc("Solution settings")
 model SolutionSettings is Record<string>;
@@ -309,7 +308,6 @@ model SolutionSettings is Record<string>;
 //---------------------------------------------- Operations ----------------------------------------------
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "Need to remove autoroute"
-#suppress "@azure-tools/typespec-azure-resource-manager/no-empty-model" "Existing use case"
 @route("/subscriptions/{subscriptionId}/providers/Microsoft.HybridConnectivity/")
 interface GenerateAwsTemplate {
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-operation" "Need to remove autoroute"
@@ -343,7 +341,7 @@ interface PublicCloudConnectors {
   testPermissions is ArmResourceActionAsync<
     PublicCloudConnector,
     void,
-    Azure.ResourceManager.Foundations.OperationStatusResult
+    TestPermissionResult
   >;
 }
 
@@ -359,17 +357,16 @@ interface SolutionConfigurations {
   listByWidget is ArmResourceListAtScope<SolutionConfiguration>;
 
   @doc("Trigger immediate sync with source cloud")
-  syncNow is ArmResourceActionAsync<
+  syncNow is ArmResourceActionNoResponseContentAsync<
     SolutionConfiguration,
-    void,
-    Azure.ResourceManager.Foundations.OperationStatusResult
+    void
   >;
 }
 
 @armResourceOperations
 interface Inventory {
   get is ArmResourceRead<InventoryResource>;
-  listBySolutionConfiguration is ArmResourceListByParent<InventoryResource>;
+  listByWidget is ArmResourceListByParent<InventoryResource>;
 }
 
 @armResourceOperations

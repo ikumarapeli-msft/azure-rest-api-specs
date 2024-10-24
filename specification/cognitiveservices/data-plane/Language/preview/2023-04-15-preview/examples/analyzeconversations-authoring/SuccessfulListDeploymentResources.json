@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_ListDeploymentResources",
-  "title": "Successful List Deployment Resources",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

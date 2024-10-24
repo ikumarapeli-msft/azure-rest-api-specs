@@ -1,6 +1,4 @@
 {
-  "operationId": "TextAnalysisAuthoring_EvaluateModel",
-  "title": "SuccessfulEvaluationProject",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",

@@ -56,8 +56,3 @@ using Microsoft.StandbyPool;
 );
 @@clientName(ProvisioningState, "StandbyProvisioningState", "csharp");
 @@clientName(RefillPolicy, "StandbyRefillPolicy", "csharp");
-@@clientName(Microsoft.StandbyPool,
-  "StandbyPoolManagementClient",
-  "javascript"
-);
-@@clientName(Microsoft.StandbyPool, "StandbyPoolMgmtClient", "python");

@@ -8,11 +8,6 @@ using Microsoft.LoadTestService;
 @useDependency(APIVersions.v2024_05_01_preview)
 namespace Customizations;
 
-// Client customizations should be kept in this file only and not in other files
-// Model related customizations here (Ref: https://azure.github.io/typespec-azure/docs/howtos/DataPlane%20Generation%20-%20DPG/04renaming):
-@@clientName(MetricDimensionsRequest.metricname, "metric_name", "python");
-@@clientName(MetricDimensionsRequest.timespan, "time_interval", "python");
-
 #suppress "@azure-tools/typespec-azure-core/use-standard-operations"
 @client({
   name: "LoadTestAdministrationClient",
@@ -59,14 +54,13 @@ interface TestRunOperations {
   listMetricNamespaces is LoadTestRun.listMetricNamespaces;
   listMetrics is LoadTestRun.listMetrics;
   listTestRuns is LoadTestRun.listTestRuns;
+  #suppress "@azure-tools/typespec-azure-core/no-operation-id"
   @clientName("stopTestRun", "javascript,python,java,csharp,go")
   stop is LoadTestRun.stop;
 }
 
-// NOTE: `LoadTestAdministrationClient` will contain all administration operations and `LoadTestRunClient` will contain all run based operations
-// A separate interface is made to just segregate the operations by resource type
 @client({
-  name: "LoadTestAdministrationClient",
+  name: "TestProfileAdministrationClient",
   service: Microsoft.LoadTestService,
 })
 interface TestProfileAdministrationOperations {
@@ -77,7 +71,7 @@ interface TestProfileAdministrationOperations {
 }
 
 @client({
-  name: "LoadTestRunClient",
+  name: "TestProfileRunClient",
   service: Microsoft.LoadTestService,
 })
 interface TestProfileRunOperations {
@@ -85,6 +79,7 @@ interface TestProfileRunOperations {
   deleteTestProfileRun is TestProfileRunAdministration.deleteTestProfileRun;
   getTestProfileRun is TestProfileRunAdministration.getTestProfileRun;
   listTestProfileRuns is TestProfileRunAdministration.listTestProfileRuns;
+  #suppress "@azure-tools/typespec-azure-core/no-operation-id"
   @clientName("stopTestProfileRun", "javascript,python,java,csharp,go")
   stop is TestProfileRunAdministration.stop;
 }

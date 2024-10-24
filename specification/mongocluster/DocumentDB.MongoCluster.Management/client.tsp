@@ -6,10 +6,6 @@ using Azure.ResourceManager.CommonTypes;
 using Microsoft.DocumentDB;
 
 @@clientName(Microsoft.DocumentDB, "MongoClusterMgmtClient", "python");
-@@clientName(Microsoft.DocumentDB,
-  "MongoClusterManagementClient",
-  "javascript,java"
-);
 @@access(Operations.list, Access.internal, "csharp");
 @@clientName(CheckNameAvailabilityResponse,
   "MongoClusterNameAvailabilityResult",
@@ -58,10 +54,7 @@ using Microsoft.DocumentDB;
   "MongoClusterNameUnavailableReason",
   "csharp"
 );
-@@clientName(Microsoft.DocumentDB.PublicNetworkAccess,
-  "MongoClusterPublicNetworkAccess",
-  "csharp"
-);
+@@clientName(PublicNetworkAccess, "MongoClusterPublicNetworkAccess", "csharp");
 @@clientName(FirewallRule, "MongoClusterFirewallRule", "csharp");
 @@clientName(FirewallRuleProperties,
   "MongoClusterFirewallRuleProperties",

@@ -1,6 +1,4 @@
 {
-  "operationId": "ConversationalAnalysisAuthoring_Export",
-  "title": "Successful Export Project",
   "parameters": {
     "Endpoint": "{Endpoint}",
     "Ocp-Apim-Subscription-Key": "{API key}",
